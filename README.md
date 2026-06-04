@@ -83,6 +83,8 @@ wget -O - https://github.com/DragonBluep/uboot-mt7621/releases/download/20230517
   --yes
 ```
 
+> `--wps-pin` marks the GPIO pin number of the WPS button, and it will be used to enter TFTP download mode, alse toggle the `--sysled2-pin` if set.
+
 - build by board model name
 
 In this method, it is very **dangerous** because the configs is **not believed** to be correct.
