@@ -211,6 +211,7 @@ echo "Building..."
 echo "======================================================================"
 
 make mt7621_build_defconfig
+make clean
 make CROSS_COMPILE=${Toolchain} STAGING_DIR=${Staging}
 make savedefconfig
 if [ ! -d "archive" ]; then
