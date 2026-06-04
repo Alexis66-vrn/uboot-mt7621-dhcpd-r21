@@ -112,7 +112,7 @@ function setBackupStatus(n) {
 
 function setBackupProgress(n) {
     var t = document.getElementById("bar"), i;
-    t && (i = Math.max(0, Math.min(100, parseInt(n || 0, 10))), t.setAttribute("style", "--percent: " + i), t.style.display = "block")
+    t && (i = Math.max(0, Math.min(100, parseInt(n || 0, 10))), t.style.setProperty("--percent", i), t.style.display = "block")
 }
 
 function backupUpdateRangeHint() {
@@ -417,9 +417,10 @@ function upload(n) {
             }
         },
         progress: function (n) {
-            var t = parseInt(n.loaded / n.total * 100);
-            document.getElementById("bar").setAttribute("style", "--percent: " + t);
-            document.getElementById("bar").style.display = "block"
+            var t = parseInt(n.loaded / n.total * 100),
+                e = document.getElementById("bar");
+            e.style.setProperty("--percent", t);
+            e.style.display = "block"
         }
     }))
 } (function () {
